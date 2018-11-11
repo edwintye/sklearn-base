@@ -12,6 +12,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     numpy scipy pandas scikit-learn \
     && apt-get purge -y --auto-remove $build_dep \
     && apt-get purge -y $build_dev \
-    && find /usr/local/lib/python3.*/ -name 'tests' -exec rm -r {} +
+    && find /usr/local/lib/python3.*/ -name 'tests' -exec rm -r {} + \
+    && rm -rf /var/lib/apt/lists/*
 
 CMD ["python3"]
