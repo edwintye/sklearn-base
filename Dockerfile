@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 ENV build_dep='g++ gfortran python3-dev python3-pip python3-setuptools cython3'
 ENV build_dev='libopenblas-dev liblapack-dev'
