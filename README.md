@@ -1,4 +1,4 @@
-# sklearn36-ubuntu
+# sklearn-base
 
 [![GitHub license](https://img.shields.io/github/license/edwintye/sklearn36-ubuntu.svg)](https://github.com/edwintye/sklearn36-ubuntu)
 [![](https://images.microbadger.com/badges/image/edwintye/sklearn36-ubuntu.svg)](https://microbadger.com/images/edwintye/sklearn36-ubuntu "Get your own image badge on microbadger.com")
