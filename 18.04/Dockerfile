@@ -9,7 +9,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
          $build_dev \
     && CPPFLAGS="-g0 -Wl,--strip-all -I/usr/include:/usr/local/include -L/usr/lib:/usr/local/lib" \
     pip3 install --no-cache-dir --compile --global-option=build_ext --global-option=build_clib \
-    numpy scipy pandas scikit-learn=0.20.0 \
+    numpy scipy pandas scikit-learn==0.20.0 \
     && apt-get purge -y --auto-remove $build_dep \
     && apt-get purge -y $build_dev \
     && find /usr/local/lib/python3.*/ -name 'tests' -exec rm -r {} + \
