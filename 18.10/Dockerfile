@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:18.10
 
 ENV build_dep='g++ gfortran python3-dev curl'
 ENV build_dev='libopenblas-dev liblapack-dev cython3'
