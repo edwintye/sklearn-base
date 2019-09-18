@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 ENV build_dep='g++ gfortran python3-dev curl'
-ENV build_dev='libopenblas-dev liblapack-dev'
+ENV build_dev='libopenblas-dev liblapack-dev cython3'
 
 RUN apt-get -y update && apt-get install -y --no-install-recommends \
          python3 python3-distutils ca-certificates \
