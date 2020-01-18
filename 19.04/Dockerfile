@@ -10,7 +10,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py \
     && CPPFLAGS="-g0 -Wl,--strip-all -I/usr/include:/usr/local/include -L/usr/lib:/usr/local/lib" \
     pip install --no-cache-dir --compile --global-option=build_ext \
-    numpy scipy \
+    numpy scipy==1.3.2 \
     && CPPFLAGS="-g0 -Wl,--strip-all -I/usr/include:/usr/local/include -L/usr/lib:/usr/local/lib" \
     pip install --no-cache-dir --compile --global-option=build_ext \
     pandas scikit-learn \
