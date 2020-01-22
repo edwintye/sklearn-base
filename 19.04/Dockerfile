@@ -1,7 +1,7 @@
 FROM ubuntu:19.04
 
-ENV build_dep='g++ gfortran python3-dev curl'
-ENV build_dev='libopenblas-dev liblapack-dev cython3'
+ENV build_dep='g++ gfortran python3-dev curl cython3'
+ENV build_dev='libopenblas-dev liblapack-dev'
 
 RUN apt-get -y update && apt-get install -y --no-install-recommends \
          python3 python3-distutils ca-certificates \
@@ -16,6 +16,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     pandas scikit-learn \
     && apt-get purge -y --auto-remove $build_dep \
     && apt-get purge -y $build_dev \
+    && apt-get -y install libgomp1 \
     && find /usr/local/lib/python3.*/ -name 'tests' -exec rm -r {} + \
     && rm -rf /var/lib/apt/lists/*
 
