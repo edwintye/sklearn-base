@@ -1,16 +1,7 @@
-FROM ubuntu:latest
+FROM heroku/heroku:24.v174
 
-ENV build_dep='curl'
+USER root
 
-RUN apt-get -y update && apt-get install -y --no-install-recommends \
-         python3 python3-distutils ca-certificates \
-         $build_dep \
-    && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py \
-    && pip install --no-cache-dir --compile numpy scipy pandas scikit-learn \
-    && apt-get purge -y --auto-remove $build_dep \
-    && find /usr/local/lib/python3.*/ -name 'tests' -exec rm -r {} + \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get -y update && apt-get install -y postgresql-client-18
 
-RUN ln -s /usr/bin/python3 /usr/bin/python
-
-CMD ["python"]
+USER heroku
